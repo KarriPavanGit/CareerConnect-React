@@ -23,7 +23,7 @@ function Login() {
     }
     const userdata = { username, password };
     try {
-        const response = await axios.get(`http://localhost:5000/login`, { params: userdata });
+        const response = await axios.get(`https://careerconnect-springboot-production.up.railway.app/login`, { params: userdata });
         if (response.data) {
             let {id,role} = response.data;
             localStorage.setItem('id',id)

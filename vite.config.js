@@ -14,11 +14,5 @@ export default defineConfig({
       '@': '/src',
     },
   },
-  // Fallback to index.html
-  server: {
-    middlewareMode: 'html',
-    proxy: {
-      '**': 'http://localhost:3000',
-    },
-  },
+  
 });
