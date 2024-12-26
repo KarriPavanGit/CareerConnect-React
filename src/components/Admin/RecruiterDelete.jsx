@@ -23,7 +23,7 @@ const RecruiterDelete = () => {
 
   const fetchRecruiterData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/admin/viewallrecruiters');
+      const response = await axios.get('https://careerconnect-springboot-production.up.railway.app/admin/viewallrecruiters');
       setRecruiters(response.data);
     } catch (err) {
       setError('Failed to fetch recruiters data');
