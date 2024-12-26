@@ -34,7 +34,7 @@ const RecruiterProfile = () => {
       const fetchRecruiter = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5000/recruiter/viewbyid/${recruiterId}`
+            `https://careerconnect-springboot-production.up.railway.app/recruiter/viewbyid/${recruiterId}`
           );
           const imageBase64 = response.data.photo
             ? `data:image/jpeg;base64,${response.data.photo}`
