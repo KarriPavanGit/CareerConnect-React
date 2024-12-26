@@ -41,7 +41,7 @@ function RecruiterInsert() {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/admin/addrecruiter', data);
+      const response = await axios.post('https://careerconnect-springboot-production.up.railway.app/admin/addrecruiter', data);
 
       if (response.status === 200) {
         if (response.data.includes("exists")) {
