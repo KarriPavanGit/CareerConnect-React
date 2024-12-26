@@ -21,7 +21,7 @@ const JobViewall = () => {
 
     // Fetch jobs
     axios
-      .get('http://localhost:5000/recruiter/viewalljobs', { params: { id: recruiterId } })
+      .get('https://careerconnect-springboot-production.up.railway.app/recruiter/viewalljobs', { params: { id: recruiterId } })
       .then((response) => {
         const jobData = Array.isArray(response.data) ? response.data : [];
         setJobs(jobData);
