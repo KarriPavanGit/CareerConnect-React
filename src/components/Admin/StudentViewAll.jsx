@@ -25,7 +25,7 @@
       }
       const fetchStudentData = async () => {
         try {
-          const response = await axios.get('http://localhost:5000/admin/viewallstudents');
+          const response = await axios.get('https://careerconnect-springboot-production.up.railway.app/admin/viewallstudents');
           setStudents(response.data);
         } catch (err) {
           setError('Failed to fetch students data');
