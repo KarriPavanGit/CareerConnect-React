@@ -37,7 +37,7 @@ const StudentDelete = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this student?')) {
       try {
-        const response = await axios.delete(`http://localhost:5000/admin/deletestudent/${id}`);
+        const response = await axios.delete(`https://careerconnect-springboot-production.up.railway.app/admin/deletestudent/${id}`);
         toast(response.data);
         setStudents(students.filter(student => student.id !== id));
       } catch (err) {
