@@ -34,7 +34,7 @@ const StudentUpdate = () => {
 
   const handleSave = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/admin/updatestudent`, editData);
+      await axios.put(`https://careerconnect-springboot-production.up.railway.app/admin/updatestudent`, editData);
       setStudents((prev) =>
         prev.map((stu) => (stu.id === id ? { ...stu, ...editData } : stu))
       );
