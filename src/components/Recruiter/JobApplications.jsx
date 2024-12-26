@@ -24,7 +24,7 @@ function JobApplications(props) {
     const fetchApplications = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/recruiter/viewapplicationsbyid",
+          "https://careerconnect-springboot-production.up.railway.app/recruiter/viewapplicationsbyid",
           {
             params: { jobId: jid },
           }
