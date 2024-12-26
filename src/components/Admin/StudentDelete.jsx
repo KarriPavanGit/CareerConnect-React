@@ -21,7 +21,7 @@ const StudentDelete = () => {
     }
     const fetchStudentData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/admin/viewallstudents');
+        const response = await axios.get('https://careerconnect-springboot-production.up.railway.app/admin/viewallstudents');
         console.log(response.data);
         setStudents(response.data);
       } catch (err) {
