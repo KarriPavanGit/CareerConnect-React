@@ -56,7 +56,7 @@ function StudentRegister() {
     setLoading(true); // Show loading state during API call
 
     try {
-      const response = await axios.post('http://localhost:5000/admin/addstudent', data,
+      const response = await axios.post('https://careerconnect-springboot-production.up.railway.app/admin/addstudent', data,
         {
           params:data
         }
