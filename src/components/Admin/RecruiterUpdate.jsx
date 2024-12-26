@@ -43,7 +43,7 @@ const RecruiterUpdate = () => {
 
   const handleSave = async () => {
     try {
-      await axios.put(`http://localhost:5000/admin/updaterecruiter`, editData);
+      await axios.put(`https://careerconnect-springboot-production.up.railway.app/admin/updaterecruiter`, editData);
       setRecruiters((prev) =>
         prev.map((rec) => (rec.recruiterId === editRow ? { ...rec, ...editData } : rec))
       );
