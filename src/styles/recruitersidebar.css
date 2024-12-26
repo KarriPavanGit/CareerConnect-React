@@ -1,0 +1,82 @@
+/* Sidebar container styling */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(145deg, #1e3c72, #2a5298); /* Cool gradient with blue tones */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Styling the list */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* List item styling */
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+/* Link styling */
+.sidebar ul li a {
+  display: block;
+  text-decoration: none;
+  color: #f4f4f4; /* Light gray text for better contrast */
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.5px;
+}
+
+/* Hover effect for links */
+.sidebar ul li a:hover {
+  background: rgba(255, 255, 255, 0.2); /* Subtle highlight effect */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  color: whitesmoke; /* Gold highlight on hover */
+  transform: scale(1.05);
+}
+
+/* Active link style */
+.sidebar ul li a:active {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+  color: whitesmoke; /* Orange for active link */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar ul li a {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
+
+.titlestyle {
+  font-size: 1.8rem;
+  color: white;
+  margin: 0;
+  padding-bottom: 20px;
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+

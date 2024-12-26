@@ -1,0 +1,94 @@
+/* Scope all styles within .job-insert-page to avoid conflicts */
+.job-insert-page body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; /* Light gray */
+  color: #2c3e50; /* Dark */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.job-insert-page .job-insert-container {
+  background-color: #ffffff; /* White background */
+  border: 1px solid #dee2e6; /* Light gray border */
+  border-radius: 8px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px; /* Limit container width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-sizing: border-box; /* Include padding and border in width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px; /* Ensure some minimum height for centering */
+}
+
+.job-insert-page form {
+  width: 100%; /* Make the form take the full width of the container */
+  max-width: 400px; /* Restrict the form width to a reasonable size */
+}
+
+.job-insert-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.job-insert-page .form-group {
+  margin-bottom: 15px;
+} 
+
+.job-insert-page label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.job-insert-page input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #2c3e50;
+}
+
+.job-insert-page input[type="text"]:focus {
+  border-color: #2c3e50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(44, 62, 80, 0.5); /* Add a subtle glow */
+}
+
+.job-insert-page .submit-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #2c3e50; /* Dark button */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.job-insert-page .submit-button:hover {
+  background-color: #1a242f; /* Slightly darker shade */
+}
+
+.job-insert-page .submit-button:disabled {
+  background-color: #cccccc; /* Gray for disabled state */
+  cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .job-insert-page .job-insert-container {
+    max-width: 600px;
+  }
+}
