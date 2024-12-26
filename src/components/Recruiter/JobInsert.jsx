@@ -52,7 +52,7 @@ function JobInsert() {
     setLoading(true); // Set loading state
 
     try {
-      const response = await axios.post('http://localhost:5000/recruiter/addjob', jobData, {
+      const response = await axios.post('https://careerconnect-springboot-production.up.railway.app/recruiter/addjob', jobData, {
         // If the recruiter ID is needed in the URL, we can include it like this
         params: { recruiterId: jobData.recruiter_id },
       });
