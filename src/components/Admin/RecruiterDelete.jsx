@@ -35,7 +35,7 @@ const RecruiterDelete = () => {
   const handleDelete = async (recruiterId) => {
     if (window.confirm('Are you sure you want to delete this recruiter?')) {
       try {
-        const response = await axios.delete(`http://localhost:5000/admin/deleterecruiter/${recruiterId}`);
+        const response = await axios.delete(`https://careerconnect-springboot-production.up.railway.app/admin/deleterecruiter/${recruiterId}`);
         toast.success(response.data);
         setRecruiters(recruiters.filter(recruiter => recruiter.recruiterId !== recruiterId));
       } catch (err) {
