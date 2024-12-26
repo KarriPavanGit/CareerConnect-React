@@ -20,7 +20,7 @@ const RecruiterUpdate = () => {
 
     const fetchRecruiters = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/admin/viewallrecruiters');
+        const response = await axios.get('https://careerconnect-springboot-production.up.railway.app/admin/viewallrecruiters');
         setRecruiters(response.data);
       } catch (err) {
         console.error('Failed to fetch recruiters:', err);
