@@ -120,11 +120,11 @@ const StudentUpdate = () => {
                 value={editData.program}
                 onChange={handleInputChange}
               />
-              <label>Department</label>
+              <label>Branch</label>
               <input
                 type="text"
-                name="department"
-                value={editData.department}
+                name="branch"
+                value={editData.branch}
                 onChange={handleInputChange}
               />
               <label>Graduation Year</label>

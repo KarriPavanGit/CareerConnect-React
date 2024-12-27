@@ -17,7 +17,7 @@ function StudentInsert() {
     phoneNumber: "",
     program: "",
     email: "",
-    department: "",
+    branch: "",
     graduationYear: "",
     username: "",
     password: ""
@@ -157,11 +157,11 @@ function StudentInsert() {
           </div>
 
           <div className="form-group">
-            <label>Department</label>
+            <label>Branch</label>
             <input
               type="text"
-              name="department"
-              value={data.department}
+              name="branch"
+              value={data.branch}
               onChange={handleChange}
               required
             />
