@@ -98,13 +98,29 @@ To suppress this warning, you need to explicitly provide the \`palette.${i}Chann
   right: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
 `,Title$1=dt.h1`
   font-size: 1.5rem;
   margin: 0;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `,ButtonContainer=dt.div`
   display: flex;
   gap: 15px;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
 `,NavButton=dt(Link)`
   padding: 10px 15px;
   font-size: 1rem;
@@ -120,7 +136,12 @@ To suppress this warning, you need to explicitly provide the \`palette.${i}Chann
     background-color: #1a2a2a;
     color: white;
   }
-`,headerVariants={hidden:{y:-100,opacity:0},visible:{y:0,opacity:1,transition:{duration:.8,ease:"easeOut"}}},Header=()=>jsxRuntimeExports.jsxs(HeaderWrapper,{initial:"hidden",animate:"visible",variants:headerVariants,children:[jsxRuntimeExports.jsx(Title$1,{children:"My Website"}),jsxRuntimeExports.jsxs(ButtonContainer,{children:[jsxRuntimeExports.jsx(NavButton,{to:"/",children:"Home"}),jsxRuntimeExports.jsx(NavButton,{to:"/about",children:"About"}),jsxRuntimeExports.jsx(NavButton,{to:"/login",children:"Login"}),jsxRuntimeExports.jsx(NavButton,{to:"/studentregister",children:"Register"}),jsxRuntimeExports.jsx(NavButton,{to:"/contact",children:"Contact"})]})]}),FooterContainer=dt(motion.div)`
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+`,headerVariants={hidden:{y:-100,opacity:0},visible:{y:0,opacity:1,transition:{duration:.8,ease:"easeOut"}}},Header=()=>jsxRuntimeExports.jsxs(HeaderWrapper,{initial:"hidden",animate:"visible",variants:headerVariants,children:[jsxRuntimeExports.jsx(Title$1,{children:"Career Connect"}),jsxRuntimeExports.jsxs(ButtonContainer,{children:[jsxRuntimeExports.jsx(NavButton,{to:"/",children:"Home"}),jsxRuntimeExports.jsx(NavButton,{to:"/about",children:"About"}),jsxRuntimeExports.jsx(NavButton,{to:"/login",children:"Login"}),jsxRuntimeExports.jsx(NavButton,{to:"/studentregister",children:"Register"}),jsxRuntimeExports.jsx(NavButton,{to:"/contact",children:"Contact"})]})]}),FooterContainer=dt(motion.div)`
   position: fixed;
   bottom: 0;
   left: 0;
