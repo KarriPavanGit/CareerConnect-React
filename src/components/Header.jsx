@@ -17,17 +17,33 @@ const HeaderWrapper = styled(motion.header)`
   right: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 1.5rem;
   margin: 0;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
   gap: 15px;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
 `;
 
 const NavButton = styled(Link)`
@@ -45,6 +61,11 @@ const NavButton = styled(Link)`
     background-color: #1a2a2a;
     color: white;
   }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
 `;
 
 // Motion Variants for Animations
@@ -60,7 +81,7 @@ const Header = () => {
       animate="visible"
       variants={headerVariants}
     >
-      <Title>My Website</Title>
+      <Title>Career Connect</Title>
       <ButtonContainer>
         <NavButton to="/">Home</NavButton>
         <NavButton to="/about">About</NavButton>
