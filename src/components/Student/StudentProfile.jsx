@@ -36,7 +36,7 @@ const StudentProfile = () => {
     } else {
       const fetchStudent = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/student/viewbyid/${studentId}`);
+          const response = await axios.get(`https://careerconnect-springboot-production.up.railway.app/student/viewbyid/${studentId}`);
           const imageBase64 = response.data.photo
             ? `data:image/jpeg;base64,${response.data.photo}`
             : '';
@@ -99,7 +99,7 @@ const StudentProfile = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/student/updatestudent', formData, {
+      const response = await axios.post('https://careerconnect-springboot-production.up.railway.app/student/updatestudent', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

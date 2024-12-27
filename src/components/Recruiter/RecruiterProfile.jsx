@@ -99,7 +99,7 @@ const RecruiterProfile = () => {
 
     try {
         const response = await axios.post(
-            "http://localhost:5000/recruiter/updaterecruiter",
+            "https://careerconnect-springboot-production.up.railway.app/recruiter/updaterecruiter",
             formData,
             {
                 headers: { "Content-Type": "multipart/form-data" },

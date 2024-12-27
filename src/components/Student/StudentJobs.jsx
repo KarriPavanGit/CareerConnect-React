@@ -20,7 +20,7 @@ function StudentJobs() {
       navigate('/login');
     } else {
       axios
-        .get("http://localhost:5000/student/viewalljobs")
+        .get("https://careerconnect-springboot-production.up.railway.app/student/viewalljobs")
         .then((response) => {
           setJobs(response.data);
           setLoading(false);
@@ -40,7 +40,7 @@ function StudentJobs() {
     formdata.append('studentid', studentId);
 
     try {
-      const response = await axios.post("http://localhost:5000/student/checkjobapplication", formdata);
+      const response = await axios.post("https://careerconnect-springboot-production.up.railway.app/student/checkjobapplication", formdata);
       if (response.data === "Job not applied") {
         // Set the selected job to show the application form
         setSelectedJob(jobId);

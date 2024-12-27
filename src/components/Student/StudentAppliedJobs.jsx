@@ -23,7 +23,7 @@ function StudentAppliedJobs() {
 
     const fetchJobs = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/student/viewjobsbyid', {
+        const response = await axios.get('https://careerconnect-springboot-production.up.railway.app/student/viewjobsbyid', {
           params: { studentId },
         });
 

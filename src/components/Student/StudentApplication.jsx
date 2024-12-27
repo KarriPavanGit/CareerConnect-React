@@ -68,7 +68,7 @@ function StudentApplication({ jobId }) {
     data.append("studentId", localStorage.getItem('id')); // Add studentId here
     
     try {
-      const response = await axios.post("http://localhost:5000/student/apply", data, {
+      const response = await axios.post("https://careerconnect-springboot-production.up.railway.app/student/apply", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
