@@ -55,8 +55,8 @@ function Footer() {
     >
       <FooterText>© 2023 YourCompany | All Rights Reserved</FooterText>
       <FooterLinks>
-        <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
-        <FooterLink href="/terms">Terms & Conditions</FooterLink>
+        <FooterLink href="/">Privacy Policy</FooterLink>
+        <FooterLink href="/">Terms & Conditions</FooterLink>
         <FooterLink href="/contact">Contact Us</FooterLink>
       </FooterLinks>
     </FooterContainer>

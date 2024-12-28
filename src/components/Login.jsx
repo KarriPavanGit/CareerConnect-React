@@ -70,7 +70,7 @@ function Login() {
 return (
     <>
     <Header/>
-    <ToastContainer theme="colored" /> // Light theme
+    <ToastContainer theme="colored" />
     <div className="login-container">
         <h1 className="login-title">Login</h1>
         <form className="login-form" onSubmit={handleSubmit}>

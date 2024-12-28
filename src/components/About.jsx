@@ -40,7 +40,7 @@ const About = () => {
   };
 
   return (
-    <div style={aboutContainerStyle}>
+    <div>
       <Header />
       <section style={aboutContentStyle}>
         <h2 style={headingStyle}>About Career Connect</h2>

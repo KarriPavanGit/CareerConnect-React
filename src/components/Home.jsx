@@ -1,161 +1,119 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Header from './Header';
 import Footer from './Footer';
-import { Search, Work, LocationOn } from '@mui/icons-material';
 
 // Styled Components
 const HomeContainer = styled.div`
-margin-top:10%;
   display: flex;
   flex-direction: column;
-  min-height: 80vh;
-  background-color: #f4f4f4; /* Light background */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
 `;
 
 const Content = styled.div`
   flex: 1;
-  padding: 20px;
-`;
-
-const SearchBar = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 30px;
-
-  input {
-    width: 80%; /* Increased width for input */
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s;
-
-    &:focus {
-      border-color: #1a2a2a; /* Highlight on focus */
-    }
-  }
-
-  button {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    width: 100px; /* Compact button width */
-    padding: 10px; /* Standard padding */
-    font-size: 0.9rem;
-    color: white;
-    background-color: #1a2a2a; /* Dark cyan button */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-
-    &:hover {
-      background-color: #123232; /* Darker hover */
-    }
-
-    svg {
-      font-size: 1rem; /* Smaller icon */
-    }
-  }
-`;
-
-
-const Title = styled.h2`
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-`;
-
-const JobCardsContainer = styled.div`
-  display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-`;
-
-const JobCard = styled(motion.div)`
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  padding: 50px 20px;
   text-align: center;
-  transition: transform 0.3s;
+`;
 
-  &:hover {
-    transform: translateY(-5px);
-  }
+const AnimatedText = styled(motion.h1)`
+  color: #333;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.2;
 
-  h3 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.2rem;
-    color: #1a2a2a;
-    margin-bottom: 10px;
-  }
-
-  p {
-    font-size: 0.9rem;
-    color: #555;
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
   }
 `;
 
-// Framer Motion Variants
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+const textVariants = {
+  hidden: { opacity: 0, y: -50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1.5, ease: 'easeOut' } },
 };
 
+const CallToAction = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+`;
+
+const MainButton = styled(motion.button)`
+  background-color: #1a2a2a;
+  color: white;
+  padding: 18px 35px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    background-color: #004085;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+`;
+
+const SubHeading = styled.p`
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  max-width: 600px;
+  margin-bottom: 20px;
+  font-weight: 300;
+`;
+
 function Home() {
+  const navigate = useNavigate(); // Use the useNavigate hook
+
   return (
-    <HomeContainer>
+    <>
       <Header />
       <Content>
-        <SearchBar>
-          <input type="text" placeholder="Search for jobs, companies..." />
-          <button>
-            <Search /> Search
-          </button>
-        </SearchBar>
-        <Title>Featured Jobs</Title>
-        <JobCardsContainer>
-          <JobCard variants={cardVariants} initial="hidden" animate="visible">
-            <h3>
-              <Work /> Software Engineer
-            </h3>
-            <p>Company: Tech Innovators</p>
-            <p>
-              <LocationOn /> New York, NY
-            </p>
-          </JobCard>
-          <JobCard variants={cardVariants} initial="hidden" animate="visible">
-            <h3>
-              <Work /> Data Scientist
-            </h3>
-            <p>Company: Data Masters</p>
-            <p>
-              <LocationOn /> San Francisco, CA
-            </p>
-          </JobCard>
-          <JobCard variants={cardVariants} initial="hidden" animate="visible">
-            <h3>
-              <Work /> Product Manager
-            </h3>
-            <p>Company: Visionary Products</p>
-            <p>
-              <LocationOn /> Remote
-            </p>
-          </JobCard>
-        </JobCardsContainer>
+        {/* Animated Heading */}
+        <AnimatedText variants={textVariants} initial="hidden" animate="visible">
+          Welcome to Your Dream Job Portal
+        </AnimatedText>
+        
+        {/* Call to Action */}
+        <CallToAction>
+          <SubHeading>
+            Find exciting career opportunities with top companies. Let us help you take the next step in your professional journey.
+          </SubHeading>
+          <MainButton
+            variants={{
+              hidden: { scale: 0.95 },
+              visible: { scale: 1, transition: { duration: 0.4, ease: 'easeOut' } },
+            }}
+            initial="hidden"
+            animate="visible"
+            onClick={() => navigate('/login')} // Corrected onClick handler
+          >
+            Start Your Search
+          </MainButton>
+        </CallToAction>
       </Content>
       <Footer />
-    </HomeContainer>
+    </>
   );
 }
 
