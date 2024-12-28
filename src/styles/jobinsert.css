@@ -87,7 +87,7 @@
 }
 
 /* Responsive design */
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .job-insert-page .job-insert-container {
     max-width: 600px;
   }

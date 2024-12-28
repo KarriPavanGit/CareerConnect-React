@@ -90,7 +90,7 @@ button:disabled {
 }
 
 /* Align fields neatly */
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   form div {
     justify-content: flex-start;
   }
