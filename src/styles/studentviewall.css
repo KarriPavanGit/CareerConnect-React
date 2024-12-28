@@ -158,7 +158,7 @@ tr:hover {
   flex-grow: 1; /* Allow the viewer to take up available space */
   overflow: hidden;
   display: flex;
-  justify-content: center;/
+  justify-content: center;
   align-items: center;
 }
 
