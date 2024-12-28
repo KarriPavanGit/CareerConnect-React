@@ -141,7 +141,7 @@ button.edit-btn:hover {
 /* Responsive Styles */
 
 /* Mobile and Small Screen Sizes */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .main-content {
     padding: 10px;
     width: 100%;
