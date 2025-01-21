@@ -1,64 +1,66 @@
 import React, { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setName('');
-    setEmail('');
-    setMessage('');
+    try {
+      const data = { name, email, message };
+      const response = await axios.post('https://your-api-endpoint.com/contact', data);
+      if (response.status === 200) {
+        toast.success('Message sent successfully!');
+        setName('');
+        setEmail('');
+        setMessage('');
+      }
+    } catch (error) {
+      toast.error('Failed to send the message. Please try again.');
+      console.error('Error submitting the form', error);
+    }
   };
 
   return (
     <div style={styles.contactContainer}>
+      <ToastContainer />
       <Header />
       <h1 style={styles.contactTitle}>Contact Us</h1>
-      {submitted ? (
-        <div style={styles.thankYouMessage}>
-          <h2>Thank you for your message!</h2>
-          <p>We will get back to you shortly.</p>
-        </div>
-      ) : (
-        <form
-          onSubmit={handleSubmit}
-          style={styles.contactForm}
-        >
-          <input
-            type="text"
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            style={styles.contactInput}
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            style={styles.contactInput}
-          />
-          <textarea
-            placeholder="Your Message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-            style={styles.contactTextarea}
-          />
-          <button type="submit" style={styles.contactButton}>
-            Send Message
-          </button>
-        </form>
-      )}
-      <Footer/>
+      <form onSubmit={handleSubmit} style={styles.contactForm}>
+        <input
+          type="text"
+          placeholder="Your Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          style={styles.contactInput}
+        />
+        <input
+          type="email"
+          placeholder="Your Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          style={styles.contactInput}
+        />
+        <textarea
+          placeholder="Your Message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          required
+          style={styles.contactTextarea}
+        />
+        <button type="submit" style={styles.contactButton}>
+          Send Message
+        </button>
+      </form>
+      <Footer />
       <style>{`
         @media (max-width: 768px) {
           h1 {
@@ -81,7 +83,7 @@ const styles = {
     fontFamily: 'Arial, sans-serif',
     textAlign: 'center',
     backgroundColor: '#ffffff',
-    width:'100vw',
+    width: '100vw',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
     minHeight: '100vh',
@@ -127,15 +129,6 @@ const styles = {
     borderRadius: '5px',
     cursor: 'pointer',
     transition: 'background-color 0.3s ease',
-  },
-  contactFooter: {
-    marginTop: '20px',
-    fontSize: '0.9rem',
-    color: '#555',
-    textAlign: 'center',
-  },
-  thankYouMessage: {
-    margin: '20px',
   },
 };
 

@@ -77,6 +77,7 @@ function JobApplications(props) {
               <button onClick={() => handleViewResume(application.resumeUrl)}>
                 View Resume
               </button>
+              <p>Approval/Rejection:</p>
             </div>
           ))
         )}
