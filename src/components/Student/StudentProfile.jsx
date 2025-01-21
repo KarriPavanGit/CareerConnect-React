@@ -127,7 +127,7 @@ const StudentProfile = () => {
           {photo ? (
             <img src={photo} alt="Profile" className="profile-photo" />
           ) : (
-            <img src="https://via.placeholder.com/150" alt="Profile" className="profile-photo" />
+              <img src="https://via.placeholder.com/100" alt="Profile" className="profile-photo" />
           )}
         </div>
         </div>
